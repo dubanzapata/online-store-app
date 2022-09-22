@@ -7,14 +7,14 @@ import '../style/tables.css'
 
 const Proveedores = () => {
   
-  const baseUrl="https://localhost:7071/api/Provider";
+  const baseUrl="https://localhost:7066/api/Provider";
   const [data, setData]= useState([]); //Estado
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [proveedorSeleccionado, setproveedorSeleccionado]= useState({
     idProvider: '',
-    provider_name: '',
+    providerName: '',
     nit: '',
     phone: '',
     address: ''
@@ -58,7 +58,7 @@ console.table(response.data);
       var dataAuxiliar=data;
       dataAuxiliar.map(provider=>{
         if(provider.idProvider===proveedorSeleccionado.idProvider){
-          provider.provider_name=respuesta.provider_name;
+          provider.providerName=respuesta.providerName;
           provider.nit=respuesta.nit;
           provider.phone=respuesta.phone;
           provider.address=respuesta.address;
@@ -130,7 +130,7 @@ console.table(response.data);
                   {data.map(provider=>(
                     <tr key={provider.idProvider}>
                       <td data-label="Id Provider" scope="row">{provider.idProvider}</td>
-                      <td data-label="Name Provider" >{provider.provider_name}</td>
+                      <td data-label="Name Provider" >{provider.providerName}</td>
                       <td data-label="Nit" >{provider.nit}</td>
                       <td data-label="Phone Number" >{provider.phone}</td>
                       <td data-label="Addres" >{provider.address}</td>
@@ -158,7 +158,7 @@ console.table(response.data);
 <ModalBody>
     <div className="form-group mb-3">
         <label>Name Provider:</label>
-        <input type="text" className="form-control mb-3" name="provider_name" onChange={handleChange} />
+        <input type="text" className="form-control mb-3" name="providerName" onChange={handleChange} />
 
         <label>Nit:</label>
         <input type="text" className="form-control mb-3" name="nit" onChange={handleChange} />
@@ -193,7 +193,7 @@ console.table(response.data);
         <br />
         <label>Name Provider:</label>
         <br />
-        <input type="text" className="form-control" name="provider_name" onChange={handleChange} value={ proveedorSeleccionado && proveedorSeleccionado.provider_name}/>
+        <input type="text" className="form-control" name="providerName" onChange={handleChange} value={ proveedorSeleccionado && proveedorSeleccionado.providerName}/>
         <br />
         <label>Nit:</label>
         <br />
@@ -220,7 +220,7 @@ console.table(response.data);
 {/* MODAL Eliminar */}
  <Modal isOpen={modalEliminar} backdrop={false}>
         <ModalBody>
-            Are you sure you want to delete the selected provider "{proveedorSeleccionado && proveedorSeleccionado.provider_name}"? 
+            Are you sure you want to delete the selected provider "{proveedorSeleccionado && proveedorSeleccionado.providerName}"? 
         </ModalBody>
         <ModalFooter>
             <button className="btn btn-danger" onClick={()=>peticionDelete() }>Yes</button>
