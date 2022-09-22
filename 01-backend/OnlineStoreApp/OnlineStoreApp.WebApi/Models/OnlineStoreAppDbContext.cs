@@ -115,7 +115,7 @@ namespace OnlineStoreApp.WebApi.Models
 
                 entity.Property(e => e.ProviderName)
                     .HasMaxLength(50)
-                    .HasColumnName("provider_name");
+                    .HasColumnName("providerName");
             });
 
             modelBuilder.Entity<Sale>(entity =>
