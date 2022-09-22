@@ -9,7 +9,7 @@ namespace OnlineStoreApp.WebApi.Utils
         public AutoMapperProlife()
         {
             CreateMap<Product, ProductDto>()
-                .ForMember(x=>x.provider_name,p=>p.MapFrom(src=>src.IdProviderNavigation.ProviderName))
+                .ForMember(x=>x.providerName, p=>p.MapFrom(src=>src.IdProviderNavigation.ProviderName))
                 .ReverseMap();
             CreateMap<Provider, ProviderDto>();
         }

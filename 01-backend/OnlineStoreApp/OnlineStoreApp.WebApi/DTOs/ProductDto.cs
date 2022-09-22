@@ -6,7 +6,7 @@
 
         public int idProvider { get; set; }
 
-        public string? product_name { get; set; }
+        public string? product_ame { get; set; }
 
         public string? description { get; set; }
 
@@ -14,7 +14,7 @@
 
         public int amount { get; set; }
 
-        public string? provider_name { get; set; }
+        public string? providerName { get; set; }
     }
 }
 
