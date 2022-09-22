@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/tables.css'
 
 const Clientes = () => {
-const Url = " https://localhost:7071/api/Customer";
+const Url = " https://localhost:7066/api/Customer";
 const [data, setData]=useState([]);
 const [modalInsertar, setModalInsertar]=useState(false);
 const [modalEliminar , setModalEliminar]=useState(false);

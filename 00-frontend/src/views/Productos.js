@@ -9,7 +9,7 @@ import '../style/tables.css'
 
 const Productos = () => {
   
-  const baseUrl="https://localhost:7071/api/Product/getProduct";
+  const baseUrl="https://localhost:7066/api/Product";
   const [data, setData]= useState([]);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
@@ -20,24 +20,22 @@ const Productos = () => {
     description: '',
     amount: '',
     price: '',
-    idProvider: ''
+    idProvider: '',
+    providerName: ''
   });
 
   const [dataProvedor, setDataProvedor] = useState([]);
   
   const getListProvider = async () => {
      try {
-      const {data} = await axios.get("https://localhost:7071/api/Provider");
+      const {data} = await axios.get("https://localhost:7066/api/Provider");
       setDataProvedor(data);
      }catch(error) {
       console.log(error);
      }
   }
 
-  const handleChangeProvider = event =>{
-    console.log(event.target.value);
-    setDataProvedor(event.target.value);
-  }
+
 
 
 
@@ -85,6 +83,7 @@ const Productos = () => {
           product.amount=respuesta.amount;
           product.price=respuesta.price;
           product.idProvider=respuesta.idProvider;
+          product.providerName=respuesta.providerName;
         }
       })
       abrirCerrarModalEditar();
@@ -159,7 +158,7 @@ const Productos = () => {
                       <td data-label="Amount">{product.amount}</td>
                       <td data-label="Price">$ {product.price}</td>
                       <td data-label="Id Provider">{product.idProvider}</td>
-                      <td data-label="Name Provider"></td>
+                      <td data-label="Name Provider">{product.providerName}</td>
                       <td data-label="Action">
                       <button className="btn btn-small btn-primary me-1" onClick={()=>seleccionarproducto(product,"Editar")}>
                         <FaPen/>
@@ -197,9 +196,9 @@ const Productos = () => {
         <input type="text" className="form-control mb-3" name="idProvider" onChange={handleChange}/>
 
         <label>Name Provider</label>
-        <select className="form-select mb-3" aria-label=".form-select-lg example" onChange={handleChangeProvider}>
+        <select className="form-select mb-3" aria-label=".form-select-lg example" onChange={handleChange}>
         {dataProvedor.map(elemento=>(
-          <option key={elemento.idProvider} value={elemento.idProvider}>{elemento.provider_name}</option>
+          <option key={elemento.idProvider} value={elemento.idProvider}>{elemento.providerName}</option>
         )
           
         )}
