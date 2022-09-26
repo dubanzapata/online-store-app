@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
-function SearchCliente() {
+function SearchClient() {
 
   const [users, setUsers]= useState([]);
   const [Customer, setTablaCustomer]= useState([]);
@@ -79,4 +79,4 @@ peticionGet();
   );
 }
 
-export default SearchCliente;
+export default SearchClient;
