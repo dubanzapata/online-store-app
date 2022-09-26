@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using OnlineStoreApp.WebApi.DTOs;
 using OnlineStoreApp.WebApi.Models;
-using OnlineStoreApp.WebApi.DTO;
+
+
 
 namespace OnlineStoreApp.WebApi.Utils
 {
@@ -8,10 +10,16 @@ namespace OnlineStoreApp.WebApi.Utils
     {
         public AutoMapperProlife()
         {
-            CreateMap<Product, ProductDto>()
-                .ForMember(x=>x.providerName, p=>p.MapFrom(src=>src.IdProviderNavigation.ProviderName))
-                .ReverseMap();
-            CreateMap<Provider, ProviderDto>();
+            CreateMap<Product, ProductDto>().ForMember(x=> x.providerName, p=> p.MapFrom(src => src.IdProviderNavigation.ProviderName));
+            CreateMap<ProductDto, Product>();
+
+            
+
+
+            CreateMap<Product,ProductRequestDto>();
+            CreateMap<ProductRequestDto, Product>();
+
+            CreateMap<Provider, ProviderRequestDto>();
         }
 
     }

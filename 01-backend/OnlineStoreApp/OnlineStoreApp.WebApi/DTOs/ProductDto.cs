@@ -1,4 +1,4 @@
-﻿namespace OnlineStoreApp.WebApi.DTO
+﻿namespace OnlineStoreApp.WebApi.DTOs
 {
     public class ProductDto
     {
@@ -6,7 +6,7 @@
 
         public int idProvider { get; set; }
 
-        public string? product_ame { get; set; }
+        public string? productName { get; set; }
 
         public string? description { get; set; }
 

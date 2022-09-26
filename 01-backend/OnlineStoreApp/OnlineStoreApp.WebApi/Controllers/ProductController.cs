@@ -2,8 +2,9 @@
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OnlineStoreApp.WebApi.DTO;
+using OnlineStoreApp.WebApi.DTOs;
 using OnlineStoreApp.WebApi.Models;
+
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -35,8 +36,8 @@ namespace OnlineStoreApp.WebApi.Controllers
             {
                 //return Ok(context.product.ToList());
 
-                var result = await context.Products.Include(x=>x.IdProviderNavigation).ToListAsync();
-                return await context.Products.ProjectTo<ProductDto>(mapper.ConfigurationProvider).ToListAsync();
+                var result = await context.Product.Include(x => x.IdProviderNavigation).ProjectTo<ProductDto>(mapper.ConfigurationProvider).ToListAsync();
+                return result;
 
 
             }
@@ -50,34 +51,18 @@ namespace OnlineStoreApp.WebApi.Controllers
 
         // GET api/<GestoresProductoController>/5
         [HttpGet("{id}")]
-        public ActionResult Get(int id)
+        //public ActionResult Get(int id)
+        public ActionResult get(int id)
         {
             try
             {
 
-                var gestor = context.Products.FirstOrDefault(x => x.IdProduct == id);
+
+                var gestor = context.Product.FirstOrDefault(x => x.IdProduct == id);
+
+
 
                 return Ok(gestor);
-
-
-            } catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
-        // POST api/<GestoresProductoController>
-        [HttpPost]
-        public ActionResult Post( Product gestor)
-        {
-            try
-            {
-                context.Products.Add(gestor);
-                context.SaveChanges();
-
-                return CreatedAtRoute("Product",new { id=gestor.IdProduct},gestor);
-
-                
 
 
             }
@@ -87,19 +72,50 @@ namespace OnlineStoreApp.WebApi.Controllers
             }
         }
 
-        // PUT api/<GestoresProductoController>/5
-        [HttpPut("{id}")]
-        public ActionResult Put(int id,  Product gestor)
+        // POST api/<GestoresProductoController>
+        [HttpPost("PostRequest")]
+
+        public async Task<ActionResult<ProductRequestDto>> PostRequest(ProductRequestDto gestor)
+
         {
             try
             {
 
-                if(gestor.IdProduct==id)
-                context.Entry(gestor).State=EntityState.Modified;
+                var createProduct = mapper.Map<Product>(gestor);
+
+
+                context.Product.Add(createProduct);
+                var result = await context.Product.Include(x => x.IdProviderNavigation).FirstOrDefaultAsync(x => x.IdProduct == createProduct.IdProduct);
+
+                var ReatDto = mapper.Map<ProductDto>(result);
+
+                return Ok(createProduct);
+
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+
+            }
+
+
+
+        }
+
+        // PUT api/<GestoresProductoController>/5
+        [HttpPut("{id}")]
+        public ActionResult Put(int id, Product gestor)
+        {
+            try
+            {
+
+                if (gestor.IdProduct == id)
+                    context.Entry(gestor).State = EntityState.Modified;
                 context.SaveChanges();
 
-                return CreatedAtRoute("getProduct", new { id=gestor.IdProduct},gestor);  
-                
+                return CreatedAtRoute("getProduct", new { id = gestor.IdProduct }, gestor);
+
 
 
             }
@@ -116,11 +132,11 @@ namespace OnlineStoreApp.WebApi.Controllers
             try
             {
 
-                var gestor = context.Products.FirstOrDefault(x => x.IdProduct == id);
+                var gestor = context.Product.FirstOrDefault(x => x.IdProduct == id);
 
                 if (gestor != null)
                 {
-                    context.Products.Remove(gestor);
+                    context.Product.Remove(gestor);
                     context.SaveChanges();
                     return Ok(id);
                 }
@@ -136,4 +152,6 @@ namespace OnlineStoreApp.WebApi.Controllers
             }
         }
     }
+
+    internal record NewRecord(int Id);
 }

@@ -1,3 +1,4 @@
+using AutoMapper;
 using OnlineStoreApp.WebApi.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,8 @@ builder.Services.DataBaseConfiguration();
 
 builder.Services.AddCors();
 builder.Services.AddAutoMapper(typeof(Program));
+
+
 
 
 

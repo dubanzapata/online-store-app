@@ -1,8 +1,8 @@
-﻿namespace OnlineStoreApp.WebApi.DTO
+﻿namespace OnlineStoreApp.WebApi.DTOs
 {
     public class ProviderDto
     {
-        public string? providerName { get; set; }
+        public string? ProviderName { get; set; }
     }
 }
 

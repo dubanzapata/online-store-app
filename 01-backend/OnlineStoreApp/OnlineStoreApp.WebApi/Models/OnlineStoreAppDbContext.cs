@@ -17,7 +17,7 @@ namespace OnlineStoreApp.WebApi.Models
         }
 
         public virtual DbSet<Customer> Customers { get; set; } = null!;
-        public virtual DbSet<Product> Products { get; set; } = null!;
+        public virtual DbSet<Product> Product { get; set; } = null!;
         public virtual DbSet<Provider> Providers { get; set; } = null!;
         public virtual DbSet<Sale> Sales { get; set; } = null!;
         public virtual DbSet<SaleDetail> SaleDetails { get; set; } = null!;
@@ -84,7 +84,7 @@ namespace OnlineStoreApp.WebApi.Models
 
                 entity.Property(e => e.ProductName)
                     .HasMaxLength(50)
-                    .HasColumnName("product_name");
+                    .HasColumnName("productName");
 
                 entity.HasOne(d => d.IdProviderNavigation)
                     .WithMany(p => p.Products)
