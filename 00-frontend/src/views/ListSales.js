@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-const ListVentas = () => {
+const ListSales = () => {
 
     const baseUrl = "";
     const [data, setData]=useState([]);
@@ -151,4 +151,4 @@ const ListVentas = () => {
 }
   
 
-export default ListVentas;
+export default ListSales;

@@ -5,7 +5,7 @@ import {Modal , ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/tables.css'
 
-const Clientes = () => {
+const Costumers = () => {
 const Url = " https://localhost:7066/api/Customer";
 const [data, setData]=useState([]);
 const [modalInsertar, setModalInsertar]=useState(false);
@@ -244,4 +244,4 @@ useEffect(()=>{
     </div>
              );
 } 
-export default Clientes;
+export default Costumers;

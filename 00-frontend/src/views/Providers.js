@@ -5,7 +5,7 @@ import {Modal , ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/tables.css'
 
-const Proveedores = () => {
+const Providers = () => {
   
   const baseUrl="https://localhost:7066/api/Provider";
   const [data, setData]= useState([]); //Estado
@@ -107,7 +107,7 @@ console.table(response.data);
 
 
   return (
-    // TABLA PROVEEDORES
+    // TABLA Providers
 <div className="container col-12 mt-5">
   <div className="row col-12 justify-content-center">
     <div className="card border-primary">
@@ -237,4 +237,4 @@ console.table(response.data);
   )
 }
 
-export default Proveedores;
+export default Providers;

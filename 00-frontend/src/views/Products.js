@@ -3,11 +3,11 @@ import { FaTrashAlt, FaPen } from "react-icons/fa";
 import axios from 'axios';
 import {Modal , ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Proveedores from './Proveedores';
+import Proveedores from './Providers';
 import '../style/tables.css'
 
 
-const Productos = () => {
+const Products = () => {
   
   const baseUrl="https://localhost:7066/api/Product";
   const [data, setData]= useState([]);
@@ -274,4 +274,4 @@ const Productos = () => {
   )
 }
 
-export default Productos
+export default Products

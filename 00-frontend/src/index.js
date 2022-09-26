@@ -4,11 +4,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import "bootswatch/dist/pulse/bootstrap.min.css" ;
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Productos from './views/Productos';         
-import Clientes from './views/Clientes';
-import Ventas from './views/Ventas';
-import ListVentas from './views/ListVentas';
-import Proveedores from './views/Proveedores';
+import Products from './views/Products';         
+import Costumers from './views/Costumers';
+import Sales from './views/Sales';
+import ListSales from './views/ListSales';
+import Providers from './views/Providers';
 
 import 'bulma/css/bulma.min.css';
 
@@ -21,11 +21,11 @@ root.render(
   <Routes>
   <Route path="/" element={<App />} >
  
-      <Route path="Productos" element={<Productos />} />
-      <Route path="Clientes" element={<Clientes />} />
-      <Route path="ListVentas" element={<ListVentas />} />
-      <Route path="Ventas" element={<Ventas />} />
-      <Route path="Proveedores" element={<Proveedores />} />
+      <Route path="Products" element={<Products />} />
+      <Route path="Costumers" element={<Costumers />} />
+      <Route path="ListSales" element={<ListSales />} />
+      <Route path="Sales" element={<Sales />} />
+      <Route path="Providers" element={<Providers />} />
   </Route>
   </Routes>
   

@@ -23,21 +23,21 @@ const Navbar = () => {
                     Sale
                     </a>
                     <ul className="dropdown-menu">
-                        <li><Link className="dropdown-item fw-normal fs-5" to="/Ventas">New Sale</Link></li>
-                        <li><Link className="dropdown-item fw-normal fs-5" to="/ListVentas">Sales List </Link></li>
+                        <li><Link className="dropdown-item fw-normal fs-5" to="/Sales">New Sale</Link></li>
+                        <li><Link className="dropdown-item fw-normal fs-5" to="/ListSales">Sales List </Link></li>
                     </ul>
                 </li>
 
                 <li className="nav-item ms-2">
-                    <Link to="/Productos"className="nav-link fw-normal fs-5">Products</Link>
+                    <Link to="/Products"className="nav-link fw-normal fs-5">Products</Link>
                 </li>
 
                 <li className="nav-item ms-2">
-                    <Link  to="/Clientes" className="nav-link fw-normal fs-5"> Clients </Link>
+                    <Link  to="/Costumers" className="nav-link fw-normal fs-5"> Costumer </Link>
                 </li>
                     
                 <li className="nav-item ms-2">
-                    <Link  to="/Proveedores" className="nav-link fw-normal fs-5"> Providers </Link>
+                    <Link  to="/Providers" className="nav-link fw-normal fs-5"> Providers </Link>
                 </li>
                 
                 <li className="nav-item ms-2">

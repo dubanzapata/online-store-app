@@ -1,11 +1,10 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaTrashAlt} from "react-icons/fa";
-import SearchCliente from "../components/SearchCliente";
-import SearchProduct from "../components/SearchProduct";
+
 import '../style/tableSale.css'
 
-const Ventas = () => {
+const Sales = () => {
   return (
     
     <div className='container col-12  mt-5'>
@@ -17,7 +16,7 @@ const Ventas = () => {
                   <div className="card-header border-primary  fw-semibold fs-5">Clients</div>
                     <div className="card-body">
 
-                        <SearchCliente/>
+                        
                         </div>
 
                         <div className="card-footer border-primary bg-light fw-semibold fs-5 p-3">
@@ -31,7 +30,7 @@ const Ventas = () => {
                   <div className="card-header border-primary  fw-semibold fs-5 p-3">Products</div>
                     <div className="card-body">
                     <form>
-                    <SearchProduct/>
+                    
 
                     </form>
 
@@ -126,4 +125,4 @@ const Ventas = () => {
   )
 }
 
-export default Ventas;
+export default Sales;
