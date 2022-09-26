@@ -16,7 +16,7 @@ const Products = () => {
   const [modalEliminar, setModalEliminar] = useState(false);
   const [productoSeleccionado, setproductoSeleccionado]= useState({
     idProduct: '',
-    product_name: '',
+    productName: '',
     description: '',
     amount: '',
     price: '',
@@ -62,7 +62,7 @@ const Products = () => {
     delete productoSeleccionado.idProduct;
     productoSeleccionado.amount=parseInt(productoSeleccionado.amount);
     productoSeleccionado.price=parseFloat(productoSeleccionado.price);//Para que quedo double?
-    await axios.post(baseUrl, productoSeleccionado)
+    await axios.post("https://localhost:7066/api/Product/PostRequest", productoSeleccionado)
     .then(response=>{
       setData(data.concat(response.data));
       abrirCerrarModalInsertar();
@@ -153,7 +153,7 @@ const Products = () => {
                   {data.map(product=>(
                     <tr key={product.idProduct}>
                       <td data-label="Id Product"scope="row">{product.idProduct}</td>
-                      <td data-label="Product">{product.product_name}</td>
+                      <td data-label="Product">{product.productName}</td>
                       <td data-label="Description">{product.description}</td>
                       <td data-label="Amount">{product.amount}</td>
                       <td data-label="Price">$ {product.price}</td>
@@ -181,7 +181,7 @@ const Products = () => {
 <ModalBody>
     <div className="form-group mb-3">
         <label>Name Product:</label>
-        <input type="text" className="form-control mb-3" name="product_name" onChange={handleChange} />
+        <input type="text" className="form-control mb-3" name="productName" onChange={handleChange} />
         
         <label>Description:</label>
         <input type="text" className="form-control mb-3" name="description" onChange={handleChange}  />
@@ -195,14 +195,17 @@ const Products = () => {
         <label>idProvider:</label>
         <input type="text" className="form-control mb-3" name="idProvider" onChange={handleChange}/>
 
-        <label>Name Provider</label>
+        <label>Name:</label>
+        <input type="text" className="form-control mb-3" name="nameProvider" onChange={handleChange}/>
+
+        {/* <label>Name Provider</label>
         <select className="form-select mb-3" aria-label=".form-select-lg example" onChange={handleChange}>
         {dataProvedor.map(elemento=>(
           <option key={elemento.idProvider} value={elemento.idProvider}>{elemento.providerName}</option>
         )
           
-        )}
-</select>
+        )} 
+</select>*/}
         
        
     </div>
@@ -227,7 +230,7 @@ const Products = () => {
         <br />
         <label>Name Product:</label>
         <br />
-        <input type="text" className="form-control" name="product_name" onChange={handleChange} value={ productoSeleccionado && productoSeleccionado.product_name} />
+        <input type="text" className="form-control" name="productName" onChange={handleChange} value={ productoSeleccionado && productoSeleccionado.productName} />
         <br />
         <label>Description:</label>
         <br />
@@ -244,11 +247,15 @@ const Products = () => {
         <label>Provider:</label>
         <br />
         <input type="text" className="form-control" name="idProvider" onChange={handleChange}  value={ productoSeleccionado && productoSeleccionado.idProvider}  />
+        <br />
+        <label>Name Provider:</label>
+        <br />
+        <input type="text" className="form-control" name="providerName" onChange={handleChange}  value={ productoSeleccionado && productoSeleccionado.providerName}  />
        
     </div>
 </ModalBody>
 <ModalFooter>
-    <button className="btn btn-primary" onClick={()=>peticionPut()}>Edit</button>{" "}
+    <button className="btn btn-primary" onClick={()=>peticionPut()}>Edit Product</button>{" "}
     <button className="btn btn-danger" onClick={()=>abrirCerrarModalEditar()}>Cancel</button>
 </ModalFooter>
 </Modal> 
@@ -257,7 +264,7 @@ const Products = () => {
 {/* MODAL Eliminar */}
 <Modal isOpen={modalEliminar}  backdrop={false}>
         <ModalBody>
-            Are you sure you want to delete the selected Customer "{productoSeleccionado && productoSeleccionado. product_name}"?
+            Are you sure you want to delete the selected product "{productoSeleccionado && productoSeleccionado. productName}"?
         </ModalBody>
         <ModalFooter>
             <button className="btn btn-danger" onClick={()=>peticionDelete()}>Yes</button>
