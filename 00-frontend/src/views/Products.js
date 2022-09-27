@@ -58,6 +58,9 @@ const Products = () => {
     })
   }
 
+
+
+
   const peticionPost=async()=>{
     delete productoSeleccionado.idProduct;
     productoSeleccionado.amount=parseInt(productoSeleccionado.amount);
@@ -66,6 +69,7 @@ const Products = () => {
     .then(response=>{
       setData(data.concat(response.data));
       abrirCerrarModalInsertar();
+      peticionGet();
     }).catch(error=>{
       console.log(error);
     })
@@ -78,7 +82,7 @@ const Products = () => {
       var dataAuxiliar=data;
       dataAuxiliar.map(product=>{
         if(product.idProduct===productoSeleccionado.idProduct){
-          product.product_name=respuesta.product_name;
+          product.productName=respuesta.productName;
           product.description=respuesta.description;
           product.amount=respuesta.amount;
           product.price=respuesta.price;
@@ -87,6 +91,7 @@ const Products = () => {
         }
       })
       abrirCerrarModalEditar();
+      peticionGet();
     }).catch(error=>{
       console.log(error);
     })
@@ -192,21 +197,16 @@ const Products = () => {
         <label>Price:</label>
         <input type="numeric" className="form-control mb-3" name="price" onChange={handleChange}  />
         
-        <label>idProvider:</label>
-        <input type="text" className="form-control mb-3" name="idProvider" onChange={handleChange}/>
+        {/* <label>idProvider:</label>
+        <input type="text" className="form-control mb-3" name="idProvider" onChange={handleChange}/> */}
 
-        <label>Name:</label>
-        <input type="text" className="form-control mb-3" name="nameProvider" onChange={handleChange}/>
-
-        {/* <label>Name Provider</label>
-        <select className="form-select mb-3" aria-label=".form-select-lg example" onChange={handleChange}>
-        {dataProvedor.map(elemento=>(
-          <option key={elemento.idProvider} value={elemento.idProvider}>{elemento.providerName}</option>
-        )
-          
-        )} 
-</select>*/}
-        
+         <label>Name Provider</label>
+        <select className="form-select mb-3" name="idProvider"aria-label=".form-select-lg example" onChange={handleChange}>
+          {dataProvedor.map(elemento=>(
+            <option key={elemento.idProvider} value={elemento.idProvider}>{elemento.providerName}</option>
+         ))} 
+        </select>
+     
        
     </div>
 </ModalBody>
@@ -244,14 +244,12 @@ const Products = () => {
         <br />
         <input type="number" className="form-control" name="price" onChange={handleChange} value={ productoSeleccionado && productoSeleccionado.price} />
         <br />
-        <label>Provider:</label>
-        <br />
-        <input type="text" className="form-control" name="idProvider" onChange={handleChange}  value={ productoSeleccionado && productoSeleccionado.idProvider}  />
-        <br />
-        <label>Name Provider:</label>
-        <br />
-        <input type="text" className="form-control" name="providerName" onChange={handleChange}  value={ productoSeleccionado && productoSeleccionado.providerName}  />
-       
+        <label>Name Provider</label>
+        <select className="form-select mb-3" name="idProvider"aria-label="form-select-lg example" onChange={handleChange} value={ productoSeleccionado && productoSeleccionado.idProvider}>
+          {dataProvedor.map(elemento=>(
+            <option key={elemento.idProvider} value={elemento.idProvider}>{elemento.providerName}</option>
+         ))} 
+        </select>
     </div>
 </ModalBody>
 <ModalFooter>
