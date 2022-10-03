@@ -28,7 +28,8 @@ const Sales = () => {
     const [{ price }] = array.filter(item=>item.idProduct===idProduct);
     setPrice(price);
   };
-  
+
+ 
     const handleChange = (e,input)=>{
       switch(input){
         case "date":
@@ -47,7 +48,7 @@ const Sales = () => {
         case "amount":
           setAmount(e.target.value)
         break;
-        case "totalPrice":
+        case "totalPrice":   
           setTotalPrice(e.target.value);
         break;
       }
@@ -62,7 +63,7 @@ const Sales = () => {
         product,
         price,
         amount,
-        totalPrice
+        totalPrice : price*amount
       };
   
       setResult(impresion);
@@ -152,7 +153,7 @@ const Sales = () => {
           <div className="row mb-5">
             <label htmlFor="totalPrice" className="col-sm-3 col-form-label ">Total Price</label>
               <div className="col-sm-9">
-              <input type="number"className="form-control" name="totalPrice" onChange={ (e)=>handleChange(e,"totalPrice") } value={ totalPrice } />
+              <input type="number"className="form-control" name="totalPrice" onChange={ (e)=>handleChange(e,"totalPrice") } value={amount*price} readOnly/>
               </div>
           </div>
               
