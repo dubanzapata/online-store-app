@@ -1,157 +1,198 @@
-
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaTrashAlt, FaPen } from "react-icons/fa";
-
+import axios from 'axios';
 import '../style/tableSale.css'
+import TableSale from "./TableSale";
 
 const Sales = () => {
+
+  const [date, setDate] = useState(new Date());
+  const [clientData, setClientData] = useState([]);
+  const [productsData, setProductsData] = useState([]);
+  const [client, setClient] = useState("");
+  const [product, setProduct] = useState("");
+  const [price, setPrice] = useState(0);
+  const [amount, setAmount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [result, setResult] = useState({
+    date:"",
+    client:"",
+    product:"",
+    price:"",
+    amount:"",
+    totalPrice:""
+  });
+
+  const filterPriceProduct = (array,idProduct) =>{
+    const [{ price }] = array.filter(item=>item.idProduct===idProduct);
+    setPrice(price);
+  };
+
+ 
+    const handleChange = (e,input)=>{
+      switch(input){
+        case "date":
+          setDate(e.target.value);
+        break;
+        case "client":
+          setClient(e.target.value);
+        break;
+        case "product":
+          setProduct(e.target.value);
+          filterPriceProduct(productsData,+( e.target.value));
+        break;
+        case "price":
+          setPrice(e.target.value);
+        break;
+        case "amount":
+          setAmount(e.target.value)
+        break;
+        case "totalPrice":   
+          setTotalPrice(e.target.value);
+        break;
+      }
+    };
+  
+    const handleSubmit = (e)=>{
+      e.preventDefault();
+  
+      const impresion = {
+        date,
+        client,
+        product,
+        price,
+        amount,
+        totalPrice : price*amount
+      };
+  
+      setResult(impresion);
+    };
+
+
+    
+    const getListCustomers = async () => {
+      try {
+       const {data} = await axios.get("http://localhost:5000/customers");
+       setClientData(data);
+      }catch(error) {
+       console.log(error);
+      }
+   }
+
+   const getListProducts = async () => {
+    try {
+     const {data} = await axios.get("http://localhost:5000/products");
+     setProductsData(data);
+    }catch(error) {
+     console.log(error);
+    }
+ }
+
+  useEffect(() => {
+    getListCustomers();
+    getListProducts();
+  }, []);
+
   return (
-    
-  <div className='container col-12  mt-5'>
-    <div className="row">
+  <>
+    <div className='container col-12  mt-5'>
+     <div className="row">
       <div className='containerLeftC col-5 '>
+        {/* DATOS DE VENTA*/}
+      <div className="card border-primary">
+      <div className="card-header border-primary  fw-semibold fs-5">Invoce Data</div>
+       <div className="card-body">
+          <form onSubmit={handleSubmit}>
 
-         {/* PARA EL CLIENTE*/}
-        <div className="card border-primary">
-          <div className="card-header border-primary  fw-semibold fs-5">Clients</div>
-            <div className="card-body">
-            <form>
-
-              <div className="row mb-3">
-                <label for="name" className="col-sm-3 col-form-label">Name Client</label>
-                    <div className="col-sm-9">
-                      <select className="form-control">
-                        <option selected>Cliente1</option>
-                      </select>
-                    </div>
-              </div>
-
-              <div className="row mb-3">
-                  <label for="date" className="col-sm-3 col-form-label ">Date</label>
-                    <div className="col-sm-9">
-                        <input type="date" className="form-control" id="date"/>
-                    </div>
-              </div>
-            </form>
-
-            </div>
-
-              <div className="card-footer border-primary bg-light fw-semibold fs-5 p-3">
-                <button className="btn btn-primary">Add </button>
-                  </div>
-              </div>
-
-          {/* PARA EL PRODUCTO*/}
-                
-          <div className="card border-primary mt-4">
-              <div className="card-header border-primary  fw-semibold fs-5 p-3">Products</div>
-                <div className="card-body">
-                  <form>
-
-                    <div className="row mb-3">
-                       <label for="nameProduct" className="col-sm-3 col-form-label">Name Product</label>
-                          <div className="col-sm-9">
-                            <select className="form-control">
-                              <option selected>Product 1</option>
-                            </select>
-                          </div>
-                    </div>
-
-                    <div className="row mb-3">
-                        <label for="amountSale" className="col-sm-3 col-form-label ">Amount</label>
-                          <div className="col-sm-9">
-                              <input type="number" className="form-control" id="amountSale" min={0} />
-                          </div>
-                    </div>
-                  </form>
-
-                </div>
-
-                  <div className="card-footer border-primary bg-light fw-semibold fs-5 p-3">
-                    <button className="btn btn-primary">Add Product</button>
-                  </div>
-                  
-            </div>
+          <div className="row mb-3">
+            <label htmlFor="invoceDate" className="col-sm-3 col-form-label ">Date</label>
+              <div className="col-sm-9">
+                <input type="date"  className="form-control" name="date" onChange={ (e)=>handleChange(e,"date") } value={ date } />
+               </div>
           </div>
-            
 
-            {/* TABLE SALE*/}  
-          <div className='containerRigth col-7 '>
-                <div className="card border-primary">
-                  <div className="card-header border-primary  fw-semibold fs-5">Sale</div>
-                    <div className="card-body">
-
-                    {/* <div className="row mb-2 border-primary">
-                      <label className="col-sm-2 col-form-label  fw-normal fs-5">Customer</label>
-                        <div className="col-sm-10">
-                          <input type="text" className="form-control" readOnly/>
-                        </div>
-                    </div > */}
-                    
-
-                    <table className="table table table-striped table-hover">
-                     <thead>
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Acciones</th>
-                     </tr>
-                   </thead>
-
-                   <tbody>
-             
-                    <tr>
-                      <td></td> 
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>
-                          
-                      <button className="btn btn-small btn-primary me-1 btnOne" >
-                            <FaPen/>
-                          </button>
-                          <button className="btn btn-small btn-danger">
-                            <FaTrashAlt />
-                     </button>
-                     </td>
-                   </tr>
-                   </tbody>
-           
-           {/* PARA EL MONTO tOTAL*/}
-           {/* <tfoot>
-            <tr>
-            <th scope="row" colspan="3">Total Products</th>
-        
-        
-        <td>10</td>
-        <td class="font-weight-bold" colspan="2">$ <span>5000</span></td>
-        <td>
-            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-                vaciar todo
-            </button>
-        </td>
-          </tr>
-          </tfoot>
-                    */}
-                 </table>
-                        
-                        
-                    </div>
-                    <div className="card-footer border-primary bg-light fw-semibold fs-5 p-3">
-                        <button className="btn btn-primary">Add Sale</button>
-
-                    </div>
-                  
-            </div>
+          <div className="row mt-5 mb-3">
+              <label htmlFor="nameProduct" className="col-sm-3 col-form-label">Customer</label>
+                <div className="col-sm-9">
+                <select   className="form-select mb-3"name="client" onChange={ (e)=>handleChange(e,"client") } value={ client }>
+                  <option value="">Choose a Customer</option>
+                { clientData.map(item=>(
+                  <option key={ item.idCustomer } value={ item.idCustomer  } >{ item.nameCustomer  }</option>
+                )) }
+              </select>
+             </div>
           </div>
-                 
-        </div>   
+
+          <div className="row mt-5 mb-3">
+              <label htmlFor="nameProduct" className="col-sm-3 col-form-label"> Product</label>
+                <div className="col-sm-9">
+                  <select name="product" className="form-control"onChange={ (e)=>handleChange(e,"product") }  value={ product }>
+                      <option value="">Choose a Product</option>
+                      { productsData.map(item=>(
+                        <option key={ item.idProduct } value={ item.idProduct  } >{ item.productName  }</option>
+                      )) }
+                  </select>
+              </div>
+          </div>
+
+          <div className="row mb-3">
+             <label htmlFor="price" className="col-sm-3 col-form-label ">Price</label>
+               <div className="col-sm-9">
+               <input type="number" className="form-control" name="price" onChange={ (e)=>handleChange(e,"price") } value={ price } readOnly/>
+              </div>
+          </div>
+
+          <div className="row mb-3">
+            <label htmlFor="amount" className="col-sm-3 col-form-label ">Amount</label>
+              <div className="col-sm-9">
+                <input type="number" className="form-control" name="amount" onChange={ (e)=>handleChange(e,"amount") } value={ amount } min={0} />
+              </div>
+          </div>
+
+          <div className="row mb-5">
+            <label htmlFor="totalPrice" className="col-sm-3 col-form-label ">Total Price</label>
+              <div className="col-sm-9">
+              <input type="number"className="form-control" name="totalPrice" onChange={ (e)=>handleChange(e,"totalPrice") } value={amount*price} readOnly/>
+              </div>
+          </div>
+              
+          <div className="card-footer border-primary bg-light fw-semibold fs-5 ">
+             <button type="submit" className="btn btn-primary">Add Invoce </button>
+         </div>
+
+          </form>
+      </div>
+      </div>
+      </div>
+
+      {/* TABLE SALE*/}  
+
+      <div className='containerRigth col-7 '>
+       <div className="card border-primary">
+        <div className="card-header border-primary  fw-semibold fs-5">Invoce</div>
+         <div className="card-body">
+
+         <TableSale result={ result } />
+
+         <div className="card-footer border-primary bg-light fw-semibold fs-5 p-3">
+              <button className="btn btn-primary">Save Invoce</button>
+
+            </div>
+         </div>
+
+         </div>
+         </div>
+
+
+
+
     </div>
-    
+   </div>
+  
+  
+  </>
+
   )
 }
 

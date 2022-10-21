@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand ms-3" to="#">WebApp</a>
+        <a className="navbar-brand ms-3" to='#' >Online Store App</a>
          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones">
             <span className="navbar-toggler-icon"></span>
          </button>
@@ -40,9 +40,9 @@ const Navbar = () => {
                     <Link  to="/Providers" className="nav-link fw-normal fs-5"> Providers </Link>
                 </li>
                 
-                <li className="nav-item ms-2">
+                {/* <li className="nav-item ms-2">
                     <Link  to="/" className=" btn btn-small btn-primary nav-link fw-normal fs-5"> Inicia </Link>
-                </li>
+                </li> */}
 
               </ul>
           </div>

@@ -3,7 +3,6 @@ import { FaTrashAlt, FaPen } from "react-icons/fa";
 import axios from 'axios';
 import {Modal , ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Proveedores from './Providers';
 import '../style/tables.css'
 
 
@@ -37,8 +36,6 @@ const Products = () => {
 
 
 
-
-
   const handleChange= e=>{
     const {name, value}=e.target;
       setproductoSeleccionado({
@@ -48,7 +45,6 @@ const Products = () => {
       console.log(productoSeleccionado);
   }
 
-
   const peticionGet=async()=>{
     await axios.get(baseUrl)
     .then(response=>{
@@ -57,8 +53,6 @@ const Products = () => {
       console.log(error);
     })
   }
-
-
 
 
   const peticionPost=async()=>{
