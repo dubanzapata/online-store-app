@@ -1,0 +1,15 @@
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\bin\Debug\net6.0\OlineStore.Contrats.deps.json
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\bin\Debug\net6.0\OlineStore.Contrats.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\bin\Debug\net6.0\OlineStore.Contrats.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\bin\Debug\net6.0\OlineStore.Dto.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\bin\Debug\net6.0\OlineStore.Dto.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\OlineStore.Contrats.csproj.AssemblyReference.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\OlineStore.Contrats.GeneratedMSBuildEditorConfig.editorconfig
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\OlineStore.Contrats.AssemblyInfoInputs.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\OlineStore.Contrats.AssemblyInfo.cs
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\OlineStore.Contrats.csproj.CoreCompileInputs.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\OlineStore.Contrats.csproj.CopyComplete
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\OlineStore.Contrats.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\refint\OlineStore.Contrats.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\OlineStore.Contrats.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Contrats\obj\Debug\net6.0\ref\OlineStore.Contrats.dll

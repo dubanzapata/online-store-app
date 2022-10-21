@@ -1,0 +1,91 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "OlineStore.Dto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/OlineStore.Dto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OlineStore.Dto.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OlineStore.Dto/1.0.0": {
+      "type": "project",
+      "path": "../OlineStore.Dto/OlineStore.Dto.csproj",
+      "msbuildProject": "../OlineStore.Dto/OlineStore.Dto.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "OlineStore.Dto >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Duban y Andrea\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\proj\\online-store-app\\01-backend\\OnlineStoreApp\\OlineStore.Contrats\\OlineStore.Contrats.csproj",
+      "projectName": "OlineStore.Contrats",
+      "projectPath": "C:\\proj\\online-store-app\\01-backend\\OnlineStoreApp\\OlineStore.Contrats\\OlineStore.Contrats.csproj",
+      "packagesPath": "C:\\Users\\Duban y Andrea\\.nuget\\packages\\",
+      "outputPath": "C:\\proj\\online-store-app\\01-backend\\OnlineStoreApp\\OlineStore.Contrats\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Duban y Andrea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\proj\\online-store-app\\01-backend\\OnlineStoreApp\\OlineStore.Dto\\OlineStore.Dto.csproj": {
+              "projectPath": "C:\\proj\\online-store-app\\01-backend\\OnlineStoreApp\\OlineStore.Dto\\OlineStore.Dto.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\bin\Debug\net6.0\OnlineStore.Infraestructura.deps.json
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\bin\Debug\net6.0\OnlineStore.Infraestructura.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\bin\Debug\net6.0\OnlineStore.Infraestructura.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\bin\Debug\net6.0\OlineStore.Contrats.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\bin\Debug\net6.0\OlineStore.Dto.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\bin\Debug\net6.0\OlineStore.Contrats.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\bin\Debug\net6.0\OlineStore.Dto.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\OnlineStore.Infraestructura.csproj.AssemblyReference.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\OnlineStore.Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\OnlineStore.Infraestructura.AssemblyInfoInputs.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\OnlineStore.Infraestructura.AssemblyInfo.cs
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\OnlineStore.Infraestructura.csproj.CoreCompileInputs.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\OnlineStore.Infraestructura.csproj.CopyComplete
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\OnlineStore.Infraestructura.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\refint\OnlineStore.Infraestructura.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\OnlineStore.Infraestructura.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OnlineStore.Infraestructura\obj\Debug\net6.0\ref\OnlineStore.Infraestructura.dll

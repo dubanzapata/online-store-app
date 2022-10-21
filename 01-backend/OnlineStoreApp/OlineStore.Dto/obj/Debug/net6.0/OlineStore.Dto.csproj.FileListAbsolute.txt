@@ -1,0 +1,12 @@
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\bin\Debug\net6.0\OlineStore.Dto.deps.json
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\bin\Debug\net6.0\OlineStore.Dto.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\bin\Debug\net6.0\OlineStore.Dto.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\OlineStore.Dto.csproj.AssemblyReference.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\OlineStore.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\OlineStore.Dto.AssemblyInfoInputs.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\OlineStore.Dto.AssemblyInfo.cs
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\OlineStore.Dto.csproj.CoreCompileInputs.cache
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\OlineStore.Dto.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\refint\OlineStore.Dto.dll
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\OlineStore.Dto.pdb
+C:\proj\online-store-app\01-backend\OnlineStoreApp\OlineStore.Dto\obj\Debug\net6.0\ref\OlineStore.Dto.dll
