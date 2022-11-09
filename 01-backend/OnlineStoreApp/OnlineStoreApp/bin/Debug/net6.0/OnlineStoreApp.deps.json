@@ -9,6 +9,7 @@
       "OnlineStoreApp/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
           "OlineStore.Contrats": "1.0.0",
           "OlineStore.Core": "1.0.0",
           "OnlineStore.Infraestructura": "1.0.0",
@@ -497,6 +498,7 @@
       "OlineStore.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
           "OlineStore.Contrats": "1.0.0",
           "OnlineStore.Infraestructura": "1.0.0"
         },

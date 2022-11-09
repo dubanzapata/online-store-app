@@ -1848,6 +1848,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper >= 12.0.0",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
       "OlineStore.Contrats >= 1.0.0",
       "OnlineStore.Infraestructura >= 1.0.0"
     ]
@@ -1901,6 +1902,10 @@
           "AutoMapper": {
             "target": "Package",
             "version": "[12.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[6.0.10, )"
           }
         },
         "imports": [

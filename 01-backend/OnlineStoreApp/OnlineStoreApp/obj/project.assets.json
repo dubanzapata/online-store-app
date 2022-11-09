@@ -712,6 +712,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "12.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
           "OlineStore.Contrats": "1.0.0",
           "OnlineStore.Infraestructura": "1.0.0"
         },
@@ -2091,6 +2092,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
       "OlineStore.Contrats >= 1.0.0",
       "OlineStore.Core >= 1.0.0",
       "OnlineStore.Infraestructura >= 1.0.0",
@@ -2149,6 +2151,10 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[12.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[6.0.10, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

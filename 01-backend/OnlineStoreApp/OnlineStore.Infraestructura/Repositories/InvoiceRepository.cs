@@ -7,6 +7,8 @@ namespace OnlineStore.Infraestructura.Repositories
     {
         public InvoiceRepository(GestoresDbContext context):base(context)
         {
+
+            
                 
         }
 

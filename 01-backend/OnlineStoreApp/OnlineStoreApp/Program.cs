@@ -1,3 +1,5 @@
+using OlineStore.Dto.Models;
+using OnlineStore.Infraestructura;
 using OnlineStoreApp.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,7 @@ builder.Services.DataBaseConfiguration();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddDependencyInjectionConfiguration();
 builder.Services.AddCors();
+
 
 var app = builder.Build();
 

@@ -1,6 +1,7 @@
 ﻿using OlineStore.Contrats.Interfaces.Repositories;
 using OlineStore.Contrats.Interfaces.Services;
 using OlineStore.Core.Service;
+using OnlineStore.Infraestructura;
 using OnlineStore.Infraestructura.Repositories;
 
 namespace OnlineStoreApp.Configuration
@@ -27,6 +28,7 @@ namespace OnlineStoreApp.Configuration
             services.AddScoped<IInvoiceService, InvoiceService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProviderService, ProviderService>();
+            
 
             #endregion
 

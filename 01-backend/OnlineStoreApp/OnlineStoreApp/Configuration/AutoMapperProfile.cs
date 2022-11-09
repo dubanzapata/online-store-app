@@ -9,6 +9,7 @@ namespace OnlineStoreApp.Configuration
     {
         public AutoMapperProfile()
         {
+
             CreateMap<Customer, CustomerRequest>().ReverseMap();
             CreateMap<Customer,CustomerResponse>().ReverseMap();
             CreateMap<CustomerRequest, CustomerResponse>().ReverseMap();
@@ -18,9 +19,10 @@ namespace OnlineStoreApp.Configuration
             CreateMap<DetailInvoiceRequest, DetailInvoiceResponse>().ReverseMap();
 
             CreateMap<Invoice, InvoiceRequest>().ReverseMap();
-            CreateMap<Invoice,InvoiceResponse>().ReverseMap();
+            CreateMap<Invoice,InvoiceResponse>().ForMember(x => x.NameCustomer, x => x.MapFrom(x => x.IdCustomerNavigation.NameCustomer)).ReverseMap();
             CreateMap<InvoiceRequest, InvoiceResponse>().ReverseMap();
 
+            
             CreateMap<Product, ProductRequest>().ReverseMap();
             CreateMap<Product,ProductResponse>().ReverseMap();
             CreateMap<ProductRequest, ProductResponse>().ReverseMap();
@@ -28,6 +30,8 @@ namespace OnlineStoreApp.Configuration
             CreateMap<Provider, ProviderRequest>().ReverseMap();
             CreateMap<Provider,ProviderResponse>().ReverseMap();
             CreateMap<ProductRequest,ProductResponse>().ReverseMap();
+
+            
 
 
         }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pLUJCaVi2MMdY6loLQFUFRDBBPaEkFMbZyJdBhf6Ly5cmhkgSAmpUd1Nhg9Luya4odZfFboAotFJHboPszG48g==",
+  "dgSpecHash": "lqXt3NIpbJJ5jibUndeKd2eHoCwj063BuQ2M+faM2Kospa1CDMiLKcfVvBI9muSJWIGRgXZ4lPKnI6OYq5Au5A==",
   "success": true,
   "projectFilePath": "C:\\proj\\online-store-app\\01-backend\\OnlineStoreApp\\OlineStore.Core\\OlineStore.Core.csproj",
   "expectedPackageFiles": [

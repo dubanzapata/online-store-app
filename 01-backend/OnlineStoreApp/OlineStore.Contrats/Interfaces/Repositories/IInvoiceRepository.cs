@@ -2,8 +2,8 @@
 
 namespace OlineStore.Contrats.Interfaces.Repositories
 {
-    public interface IInvoiceRepository:IBaseRepository<Invoice>
+    public interface IInvoiceRepository : IBaseRepository<Invoice>
     {
-
+        
     }
 }

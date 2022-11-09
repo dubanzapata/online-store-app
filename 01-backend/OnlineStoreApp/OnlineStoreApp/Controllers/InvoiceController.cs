@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OlineStore.Contrats.Interfaces.Services;
 using OlineStore.Dto.Request;
+using OlineStore.Dto.Response;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,6 +21,7 @@ namespace OnlineStoreApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+      
             var invoice = await _invoiceService.ListInvoice();
             return Ok(invoice);
             
@@ -40,6 +42,8 @@ namespace OnlineStoreApp.Controllers
             var invoice = await _invoiceService.AddInvoice(invoiceRequest);
             return Ok(invoice);
         }
+        
+
 
         // PUT api/<InvoiceController>/5
         [HttpPut("{id}")]
